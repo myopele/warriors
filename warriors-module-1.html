@@ -1,0 +1,308 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 1 (SGI Styled)
+ File: warriors-module-1.html
+ Notes: Place all files in SAME repo/folder. No external assets required.
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 1</title>
+  <meta name="description" content="SwamiG Institute — Warriors Mini Course — Module 1: Warrior Orientation & Destiny Alignment." />
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --ok:#6ee7b7; --warn:#fbbf24; --bad:#fb7185;
+      --max:1100px; --radius:20px;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink); background:
+        radial-gradient(900px 500px at 15% -10%, rgba(187,102,255,.28), transparent 55%),
+        radial-gradient(900px 500px at 85% 0%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(900px 500px at 50% 110%, rgba(110,231,183,.10), transparent 55%),
+        var(--bg);
+      font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px 14px; border:1px solid var(--border); background:rgba(0,0,0,.25);
+      border-radius:22px; backdrop-filter: blur(10px);
+      position:sticky; top:12px; z-index:20;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:240px}
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      display:grid; place-items:center; font-weight:900;
+      background: linear-gradient(135deg, rgba(187,102,255,.35), rgba(255,209,102,.18));
+      border:1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      letter-spacing:.5px;
+    }
+    .brand h1{margin:0; font-size:14px; line-height:1.2}
+    .brand .sub{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .nav{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.04);
+      text-decoration:none; font-size:13px; color:var(--muted);
+      transition:.2s transform, .2s background, .2s border-color;
+      white-space:nowrap;
+    }
+    .chip:hover{transform: translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2)}
+    .chip strong{color:var(--ink)}
+    .hero{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:16px;
+    }
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr} .brand{min-width:auto}}
+    .panel{
+      border:1px solid var(--border);
+      background:rgba(10,10,14,.55);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel .pad{padding:18px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center; flex-wrap:wrap;
+      font-size:12px; color:var(--muted);
+    }
+    .pill{
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+    .title{
+      margin:10px 0 8px; font-size:28px; line-height:1.15; letter-spacing:-.4px;
+    }
+    .lead{margin:0; color:var(--muted)}
+    .callouts{display:grid; gap:10px; margin-top:14px}
+    .call{
+      border:1px solid var(--border); background:rgba(255,255,255,.03);
+      border-radius: 16px; padding:12px 12px;
+    }
+    .call b{color:var(--ink)}
+    .meta{
+      display:grid; gap:12px;
+    }
+    .stat{
+      border:1px solid var(--border); border-radius:18px;
+      background:rgba(255,255,255,.03); padding:14px;
+    }
+    .stat .label{color:var(--muted); font-size:12px}
+    .stat .value{font-size:15px; margin-top:4px}
+    .grid{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+    }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+    h2{margin:0 0 8px; font-size:18px}
+    h3{margin:0 0 6px; font-size:15px}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .banner{
+      margin-top:18px;
+      border:1px solid rgba(187,102,255,.35);
+      background: linear-gradient(135deg, rgba(187,102,255,.22), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding:14px 16px;
+    }
+    .banner b{color:var(--ink)}
+    .hr{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+    .formRow{display:grid; gap:10px; margin-top:10px}
+    textarea, input{
+      width:100%; border-radius:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.30); color:var(--ink);
+      padding:12px 12px; font:inherit; outline:none;
+    }
+    textarea:focus, input:focus{border-color:rgba(187,102,255,.55); box-shadow: 0 0 0 4px var(--ring)}
+    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    button{
+      cursor:pointer; border:none; border-radius:14px;
+      padding:11px 14px; font-weight:700; color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.85));
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .ghost{
+      background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .toast{
+      margin-top:10px; font-size:13px; color:var(--muted);
+    }
+    footer{
+      margin-top:26px; color:rgba(255,255,255,.45); font-size:12px;
+      text-align:center;
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-label="SGI">SGI</div>
+        <div>
+          <h1>SwamiG Institute <span class="sub">Warriors Mini Course • Winter Solstice Series</span></h1>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Course navigation">
+        <a class="chip" href="warriors-module-1.html"><strong>M1</strong> Orientation</a>
+        <a class="chip" href="warriors-module-2.html"><strong>M2</strong> Ajagun vs Ajogun</a>
+        <a class="chip" href="warriors-module-3.html"><strong>M3</strong> Relationships</a>
+        <a class="chip" href="warriors-module-4.html"><strong>M4</strong> Four Warriors</a>
+        <a class="chip" href="warriors-module-5.html"><strong>M5</strong> Vows & Accountability</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="panel">
+        <div class="pad">
+          <div class="kicker">
+            <span class="pill">Governed by <b>Sebek Hetep</b> (Ò?é Méjì)</span>
+            <span class="pill">Module 1 of 5</span>
+            <span class="pill">Warrior Consciousness</span>
+          </div>
+          <h2 class="title">Module 1 — Warrior Orientation & Destiny Alignment</h2>
+          <p class="lead">
+            The Warriors are not defined by aggression. They are energetic protectors of universal destiny and defenders of divine purpose.
+            This module establishes the foundation: <b>alignment first</b>, then response.
+          </p>
+          <div class="callouts">
+            <div class="call"><b>Core Idea:</b> Warriors exist to maintain alignment — they teach response to pressure.</div>
+            <div class="call"><b>Course Thread:</b> Ajagun (challenge) trains. Ajogun (affliction) drains. Warriors protect Ori and destiny.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="meta">
+        <div class="stat">
+          <div class="label">Learning Objectives</div>
+          <div class="value">Understand Warriors • Warrior function • Destiny protection</div>
+        </div>
+        <div class="stat">
+          <div class="label">Key Terms</div>
+          <div class="value"><code>Warrior</code> • <code>Ori</code> • <code>Alignment</code> • <code>Destiny</code></div>
+        </div>
+        <div class="stat">
+          <div class="label">Suggested Pace</div>
+          <div class="value">30–45 minutes + reflection</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="pad">
+          <h2>Teaching Notes</h2>
+          <p class="muted">
+            From the Winter Solstice Warriors framework: Warriors are energetic protectors of destiny and divine purpose.
+            They exist to keep you aligned before pressure intensifies.
+          </p>
+          <div class="hr"></div>
+          <h3>What the Warriors Are</h3>
+          <ul class="list">
+            <li><b>Protectors</b> of universal destiny.</li>
+            <li><b>Defenders</b> of divine purpose.</li>
+            <li>Forces of <b>conscious alignment</b> (not reaction, not chaos).</li>
+          </ul>
+          <div class="hr"></div>
+          <h3>What the Warriors Are Not</h3>
+          <ul class="list">
+            <li>Not uncontrolled aggression.</li>
+            <li>Not constant conflict-seeking.</li>
+            <li>Not domination for ego.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="pad">
+          <h2>Reflection Assignment</h2>
+          <p class="muted">
+            Use the form below to write your Module 1 reflection. This saves to your device (localStorage) only.
+          </p>
+
+          <div class="banner">
+            <b>Prompt:</b> Where in your life is destiny asking for protection rather than force? Identify one area of misalignment and what “Warrior response” looks like.
+          </div>
+
+          <div class="formRow">
+            <label class="muted" for="name">Name (optional)</label>
+            <input id="name" placeholder="Your name" />
+            <label class="muted" for="reflection">Your reflection</label>
+            <textarea id="reflection" rows="9" placeholder="Write here..."></textarea>
+          </div>
+
+          <div class="btnRow">
+            <button id="saveBtn">Save Reflection</button>
+            <button class="ghost" id="clearBtn" type="button">Clear</button>
+            <button class="ghost" id="copyBtn" type="button">Copy</button>
+          </div>
+          <div class="toast" id="toast">Tip: Copy your reflection into your SGI submission system if required.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Winter Solstice Warriors 2025 • SwamiG Institute • baba@swamiginstitute.com
+    </footer>
+  </div>
+
+  <script>
+    // Local-only reflection saving (no server). Safe for static hosting.
+    const KEY = "sgi_warriors_module_1_reflection";
+    const nameEl = document.getElementById("name");
+    const textEl = document.getElementById("reflection");
+    const toast = document.getElementById("toast");
+
+    function setToast(msg){ toast.textContent = msg; }
+
+    function load(){
+      try{
+        const data = JSON.parse(localStorage.getItem(KEY) || "{}");
+        nameEl.value = data.name || "";
+        textEl.value = data.text || "";
+      }catch(e){}
+    }
+    function save(){
+      const payload = { name: nameEl.value.trim(), text: textEl.value.trim(), saved_at: new Date().toISOString() };
+      localStorage.setItem(KEY, JSON.stringify(payload));
+      setToast("Saved locally ?  " + new Date().toLocaleString());
+    }
+    function clearAll(){
+      localStorage.removeItem(KEY);
+      nameEl.value = "";
+      textEl.value = "";
+      setToast("Cleared.");
+    }
+    async function copy(){
+      const out = `SGI Warriors Mini Course — Module 1 Reflection\nName: ${nameEl.value.trim() || "(blank)"}\n\n${textEl.value.trim()}`;
+      try{
+        await navigator.clipboard.writeText(out);
+        setToast("Copied to clipboard ?");
+      }catch(e){
+        setToast("Copy failed (browser blocked). Select text manually.");
+      }
+    }
+
+    document.getElementById("saveBtn").addEventListener("click", save);
+    document.getElementById("clearBtn").addEventListener("click", clearAll);
+    document.getElementById("copyBtn").addEventListener("click", copy);
+    load();
+  </script>
+</body>
+</html>

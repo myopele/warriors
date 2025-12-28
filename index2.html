@@ -1,0 +1,446 @@
+<!-- Updated index.html — smaller logo via CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SwamiG Institute — Warriors Mini Course (Winter Solstice)</title>
+  <meta name="description" content="SwamiG Institute — Winter Solstice Warriors Mini Course: Ajagun, Ajogun & Warrior Consciousness (5 modules)." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --ok:#6ee7b7; --warn:#fbbf24; --bad:#fb7185;
+      --max:1160px; --radius:22px;
+      --shadow: 0 18px 55px rgba(0,0,0,.50);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink);
+      background:
+        radial-gradient(1000px 520px at 12% -10%, rgba(187,102,255,.30), transparent 58%),
+        radial-gradient(900px 520px at 88% 0%, rgba(255,209,102,.16), transparent 52%),
+        radial-gradient(900px 520px at 50% 115%, rgba(110,231,183,.10), transparent 60%),
+        var(--bg);
+      font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.25);
+      border-radius:24px; backdrop-filter: blur(10px);
+      position:sticky; top:12px; z-index:30;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:260px}
+
+    /* ? Smaller logo (SwamiG.gif) */
+    .brand img{
+      width:70px;              /* change to 24px if you want even smaller */
+      height:70px;
+      border-radius:10px;
+      display:block;
+      object-fit:contain;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      box-shadow: 0 8px 18px rgba(0,0,0,.35);
+    }
+
+    .brand h1{margin:0; font-size:14px; line-height:1.2}
+    .brand .sub{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.04);
+      text-decoration:none; font-size:13px; color:var(--muted);
+      transition:.2s transform, .2s background, .2s border-color;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2)}
+    .chip strong{color:var(--ink)}
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--border);
+      background:rgba(10,10,14,.55);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroPad{padding:18px}
+    .kicker{display:flex; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--muted)}
+    .pill{
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.05);
+    }
+    .title{
+      margin:10px 0 8px;
+      font-size:34px; line-height:1.12; letter-spacing:-.6px;
+    }
+    .lead{margin:0; color:var(--muted); max-width:78ch}
+    .heroGrid{
+      margin-top:14px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;
+    }
+    @media (max-width: 980px){ .heroGrid{grid-template-columns:1fr} .brand{min-width:auto} }
+    .panel{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .panel b{color:var(--ink)}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:14px;
+      font-weight:900; text-decoration:none;
+      color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.88));
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .btn.ghost{
+      color:var(--ink);
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      box-shadow:none;
+      font-weight:800;
+    }
+    .cards{
+      margin-top:18px;
+      display:grid; grid-template-columns: repeat(12, 1fr); gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      border:1px solid var(--border);
+      background:rgba(10,10,14,.55);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      transition: .2s transform, .2s border-color, .2s background;
+    }
+    .card:hover{transform: translateY(-2px); border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.04)}
+    @media (max-width: 980px){ .card{grid-column: span 12} }
+    .cardPad{padding:16px}
+    .mTag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .mTag .dot{width:9px; height:9px; border-radius:99px; background:rgba(255,255,255,.35)}
+    .mTitle{margin:10px 0 6px; font-size:18px; letter-spacing:-.2px}
+    .mDesc{margin:0; color:var(--muted)}
+    .miniRow{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .miniRow .meta{color:var(--muted); font-size:12px}
+    .go{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      color:var(--ink);
+      font-weight:800;
+    }
+    .go:hover{background:rgba(255,255,255,.08)}
+    .hr{height:1px; background:rgba(255,255,255,.10); margin:16px 0}
+    .split{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
+    h2{margin:0 0 8px; font-size:18px}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .checkGrid{display:grid; gap:10px; margin-top:10px}
+    label{color:var(--muted)}
+    .toast{margin-top:10px; color:var(--muted); font-size:13px}
+    .fine{
+      margin-top:26px; color:rgba(255,255,255,.45); font-size:12px; text-align:center;
+    }
+    .note{color:var(--muted)}
+    textarea{
+      width:100%; border-radius:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.30); color:var(--ink);
+      padding:12px; font:inherit; outline:none;
+    }
+    textarea:focus{border-color:rgba(187,102,255,.55); box-shadow:0 0 0 4px var(--ring)}
+    button{
+      cursor:pointer; border:none; border-radius:14px;
+      padding:11px 14px; font-weight:900; color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.88));
+    }
+    button.ghost{
+      background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--border);
+      font-weight:800;
+    }
+    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Sticky Topbar -->
+    <div class="topbar">
+      <a href="https://swamiginstitute.com" title="Warrior Pre-Initiation Course work"><div class="brand">
+        <img src="SwamiG.gif" alt="SwamiG Logo"> </a>
+        <div>
+          <h1>SwamiG Institute <span class="sub">Warriors 2025 • 5-Module Mini Course</span></h1>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Course navigation">
+        <a class="chip" href="warriors-module-1.html"><strong>M1</strong> Orientation</a>
+        <a class="chip" href="warriors-module-2.html"><strong>M2</strong> Ajagun vs Ajogun</a>
+        <a class="chip" href="warriors-module-3.html"><strong>M3</strong> Relationships</a>
+        <a class="chip" href="warriors-module-4.html"><strong>M4</strong> Four Warriors</a>
+        <a class="chip" href="warriors-module-5.html"><strong>M5</strong> Vows- Warrior Initiation</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Course hero">
+      <div class="heroPad">
+        <div class="kicker">
+          <span class="pill">Governed by <b>Sebek Hetep</b> (Òsé Méjì)</span>
+          <span class="pill">Ajagun • Ajogun • Warrior Consciousness</span>
+          <span class="pill">SwamiG • baba@swamiginstitute.com</span>
+        </div>
+
+        <h2 class="title">Warriors Mini Course</h2>
+        <p class="lead">
+          A focused pre-initiation into the Warriors focuses on the distinction between <b>Ajagun</b> (training pressure) and <b>Ajogun</b> (affliction through disorder),
+          and the function of the <b>Warriors</b> as conscious forces of alignment that protect Ori and destiny. Satisfactory completion of this mini-course prepares an <a href="iamaborisha.com">aborisha</a> for initiation into the Warriors and is required for consideration as a candidate for 'Warrior Initiation Certification-Readiness'. <u>All Initiation MUST by confirmed by divination.</u>
+        </p>
+
+        <div class="heroGrid">
+          <div class="panel">
+            <h2>Learning Objectives</h2>
+            <ul>
+              <li>Understand Ajagun (energies of challenge)</li>
+              <li>Understand Ajogun (energies of affliction)</li>
+              <li>Understand Warriors and Warrior function</li>
+              <li>Apply sacrifice, vows, and accountability to sustain Warrior forces</li>
+            </ul>
+            <div class="ctaRow">
+              <a class="btn" href="warriors-module-1.html">Start Module 1</a>
+              <a class="btn ghost" href="#progress">Track Progress</a>
+              <a class="btn ghost" href="#notes">Course Notes</a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>How to Use This Course</h2>
+            <ul>
+              <li>Complete modules in order (M1- M5)</li>
+              <li>Write reflections inside each module (saved on your device)</li>
+              <li>Copy your reflections into your SGI submission workflow if needed</li>
+              <li>Finish with Module 5 commitments: sacrifice • vow • accountability INITIATION</li>
+            </ul>
+            <!--- p class="note"><b>Tip:</b> If you want submissions sent to email/GitHub, tell me your preferred method (Formspree, Worker, or Google Forms) and I’ll wire it in.</p> --->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Cards -->
+    <section class="cards" aria-label="Module list">
+      <article class="card">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>M1</b>&nbsp;Orientation</span>
+          <h3 class="mTitle">Warrior Orientation & Destiny Alignment</h3>
+          <p class="mDesc">Define Warrior Consciousness as protection of universal destiny and defense of divine purpose.</p>
+          <div class="miniRow">
+            <div class="meta">~30–45 min • Reflection</div>
+            <a class="go" href="warriors-module-1.html">Open M1</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>M2</b>&nbsp;Distinction</span>
+          <h3 class="mTitle">Ajagun vs Ajogun — Critical Energy Distinction</h3>
+          <p class="mDesc">Learn to label pressure correctly: training that strengthens vs affliction that drains.</p>
+          <div class="miniRow">
+            <div class="meta">~30–45 min • Diagnostic + Reflection</div>
+            <a class="go" href="warriors-module-2.html">Open M2</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>M3</b>&nbsp;Response</span>
+          <h3 class="mTitle">Warriors & Ajagun/Ajogun Relationships</h3>
+          <p class="mDesc">Ajagun applies pressure—Warriors teach response. Ajogun signals disorder—Warriors restore order.</p>
+          <div class="miniRow">
+            <div class="meta">~35–55 min • Response Map</div>
+            <a class="go" href="warriors-module-3.html">Open M3 </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>M4</b>&nbsp;Archetypes</span>
+          <h3 class="mTitle">The Four Warriors</h3>
+          <p class="mDesc">Ogun • Ochossi • Eshu • Osun — functional archetypes of protection and mastery.</p>
+          <div class="miniRow">
+            <div class="meta">~35–55 min • Reflection</div>
+            <a class="go" href="warriors-module-4.html">Open M4 </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>M5</b>&nbsp;Commitments</span>
+          <h3 class="mTitle">Sacrifice, Vows & Accountability</h3>
+          <p class="mDesc">Sustain Warrior forces: sacrifice trains, vows authorize, accountability keeps them active.</p>
+          <div class="miniRow">
+            <div class="meta">~35–60 min • Commitments + Inner Jihad</div>
+            <a class="go" href="warriors-module-5.html">Open M5 </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Optional: Certificate/Completion Card -->
+      <article class="card" id="notes">
+        <div class="cardPad">
+          <span class="mTag"><span class="dot"></span><b>Course</b>&nbsp;Completion</span>
+          <h3 class="mTitle">Concluding Questions</h3>
+          <p class="mDesc">
+            Completion means you can distinguish training from affliction, and you can sustain Warrior forces with structure.
+          </p>
+          <div class="hr"></div>
+          <ul>
+            <li>What is my long-standing personal struggle?</li>
+            <li>How does initiation through Warriors support self-conquest?</li>
+            <li>Where has order failed—and what do I restore first?</li>
+          </ul>
+          <div class="miniRow">
+            <div class="meta">Finish with Module 5 commitments</div>
+            <a class="go" href="warriors-module-5.html">Go to M5 ?</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Progress Tracker (Local-only) -->
+    <section class="split" id="progress" aria-label="Progress tracking">
+      <div class="panel">
+        <h2>Progress Tracker (Local)</h2>
+        <p class="note">Check modules as you complete them. This saves on your device only.</p>
+        <div class="checkGrid">
+          <label><input class="ck" data-k="m1" type="checkbox" /> Completed Module 1 — Orientation</label>
+          <label><input class="ck" data-k="m2" type="checkbox" /> Completed Module 2 — Ajagun vs Ajogun</label>
+          <label><input class="ck" data-k="m3" type="checkbox" /> Completed Module 3 — Relationships</label>
+          <label><input class="ck" data-k="m4" type="checkbox" /> Completed Module 4 — Four Warriors</label>
+          <label><input class="ck" data-k="m5" type="checkbox" /> Completed Module 5 — Vows & Accountability</label>
+        </div>
+        <div class="btnRow">
+          <button id="saveProgress">Save Progress</button>
+          <button class="ghost" id="resetProgress" type="button">Reset</button>
+        </div>
+        <div class="toast" id="toast">Progress not yet saved.</div>
+      </div>
+
+      <div class="panel">
+        <h2>Course Notes (Optional)</h2>
+        <p class="note">Use this space to capture course-wide insights. Saved locally.</p>
+        <textarea id="notesBox" rows="12" placeholder="Notes, insights, signs, dreams, patterns, confirmations..."></textarea>
+        <div class="btnRow">
+          <button id="saveNotes">Save Notes</button>
+          <button class="ghost" id="copyNotes" type="button">Copy Notes</button>
+          <button class="ghost" id="clearNotes" type="button">Clear</button>
+        </div>
+        <div class="toast" id="toast2">Notes not yet saved.</div>
+      </div>
+    </section>
+
+    <div class="fine">
+      Winter Solstice Warriors 2025 • SwamiG Institute • baba@swamiginstitute.com
+    </div>
+
+  </div>
+
+  <script>
+    // Local progress + notes (no server)
+    const PROG_KEY = "sgi_warriors_index_progress";
+    const NOTES_KEY = "sgi_warriors_index_notes";
+
+    const toast = document.getElementById("toast");
+    const toast2 = document.getElementById("toast2");
+    const checks = [...document.querySelectorAll(".ck")];
+    const notesBox = document.getElementById("notesBox");
+
+    function setToast(el, msg){ el.textContent = msg; }
+
+    function loadProgress(){
+      try{
+        const d = JSON.parse(localStorage.getItem(PROG_KEY) || "{}");
+        checks.forEach(c => c.checked = !!d[c.dataset.k]);
+      }catch(e){}
+    }
+    function saveProgress(){
+      const payload = { saved_at: new Date().toISOString() };
+      checks.forEach(c => payload[c.dataset.k] = c.checked);
+      localStorage.setItem(PROG_KEY, JSON.stringify(payload));
+      setToast(toast, "Progress saved ?  " + new Date().toLocaleString());
+    }
+    function resetProgress(){
+      localStorage.removeItem(PROG_KEY);
+      checks.forEach(c => c.checked = false);
+      setToast(toast, "Progress reset.");
+    }
+
+    function loadNotes(){
+      try{
+        const d = JSON.parse(localStorage.getItem(NOTES_KEY) || "{}");
+        notesBox.value = d.text || "";
+      }catch(e){}
+    }
+    function saveNotes(){
+      const payload = { text: notesBox.value.trim(), saved_at: new Date().toISOString() };
+      localStorage.setItem(NOTES_KEY, JSON.stringify(payload));
+      setToast(toast2, "Notes saved ?  " + new Date().toLocaleString());
+    }
+    async function copyNotes(){
+      const out = `SGI Warriors Mini Course — Course Notes\n\n${notesBox.value.trim()}`;
+      try{
+        await navigator.clipboard.writeText(out);
+        setToast(toast2, "Copied ?");
+      }catch(e){
+        setToast(toast2, "Copy blocked. Select and copy manually.");
+      }
+    }
+    function clearNotes(){
+      localStorage.removeItem(NOTES_KEY);
+      notesBox.value = "";
+      setToast(toast2, "Notes cleared.");
+    }
+
+    document.getElementById("saveProgress").addEventListener("click", saveProgress);
+    document.getElementById("resetProgress").addEventListener("click", resetProgress);
+
+    document.getElementById("saveNotes").addEventListener("click", saveNotes);
+    document.getElementById("copyNotes").addEventListener("click", copyNotes);
+    document.getElementById("clearNotes").addEventListener("click", clearNotes);
+
+    loadProgress();
+    loadNotes();
+  </script>
+</body>
+</html>

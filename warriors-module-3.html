@@ -1,0 +1,256 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 3 (SGI Styled)
+ File: warriors-module-3.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 3</title>
+  <meta name="description" content="Module 3: The Warriors' Relationship to Ajagun & Ajogun." />
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --ok:#6ee7b7; --bad:#fb7185;
+      --max:1100px; --radius:20px; --shadow:0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(187,102,255,.28), transparent 55%),
+        radial-gradient(900px 500px at 85% 0%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(900px 500px at 50% 110%, rgba(110,231,183,.10), transparent 55%),
+        var(--bg);
+      font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px; border:1px solid var(--border); background:rgba(0,0,0,.25);
+      border-radius:22px; backdrop-filter: blur(10px);
+      position:sticky; top:12px; z-index:20;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-weight:900;
+      background: linear-gradient(135deg, rgba(187,102,255,.35), rgba(255,209,102,.18));
+      border:1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .brand h1{margin:0; font-size:14px}
+    .brand .sub{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); text-decoration:none; font-size:13px; color:var(--muted);
+      transition:.2s transform,.2s background,.2s border-color;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2)}
+    .chip strong{color:var(--ink)}
+    .panel{border:1px solid var(--border); background:rgba(10,10,14,.55); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+    .pad{padding:18px}
+    .kicker{display:flex; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--muted)}
+    .pill{padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05)}
+    .title{margin:10px 0 8px; font-size:28px; line-height:1.15; letter-spacing:-.4px}
+    .lead{margin:0; color:var(--muted)}
+    .grid{margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 920px){.grid{grid-template-columns:1fr}}
+    .box{border:1px solid var(--border); background:rgba(255,255,255,.03); border-radius:18px; padding:14px}
+    h2{margin:0 0 6px; font-size:18px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .banner{
+      border:1px solid rgba(187,102,255,.35);
+      background: linear-gradient(135deg, rgba(187,102,255,.20), rgba(255,255,255,.02));
+      border-radius:18px; padding:12px 14px; margin-top:12px;
+    }
+    .divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:16px; border:1px solid var(--border)}
+    th,td{padding:12px; border-bottom:1px solid rgba(255,255,255,.10); vertical-align:top}
+    th{background:rgba(255,255,255,.04); text-align:left; color:var(--muted); font-size:12px; letter-spacing:.4px; text-transform:uppercase}
+    tr:last-child td{border-bottom:none}
+    textarea,input{
+      width:100%; border-radius:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.30); color:var(--ink);
+      padding:12px; font:inherit; outline:none;
+    }
+    textarea:focus,input:focus{border-color:rgba(187,102,255,.55); box-shadow:0 0 0 4px var(--ring)}
+    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    button{
+      cursor:pointer; border:none; border-radius:14px;
+      padding:11px 14px; font-weight:800; color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.85));
+    }
+    .ghost{background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--border)}
+    .toast{margin-top:10px; font-size:13px; color:var(--muted)}
+    footer{margin-top:26px; color:rgba(255,255,255,.45); font-size:12px; text-align:center}
+    .badge{display:inline-flex; gap:8px; align-items:center; font-size:12px; color:var(--muted); margin-top:8px}
+    .dot{width:10px; height:10px; border-radius:99px; display:inline-block}
+    .dot.ok{background:rgba(110,231,183,.8)}
+    .dot.bad{background:rgba(251,113,133,.8)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">SGI</div>
+        <div>
+          <h1>SwamiG Institute <span class="sub">Warriors Mini Course • Winter Solstice Series</span></h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="warriors-module-1.html"><strong>M1</strong> Orientation</a>
+        <a class="chip" href="warriors-module-2.html"><strong>M2</strong> Ajagun vs Ajogun</a>
+        <a class="chip" href="warriors-module-3.html"><strong>M3</strong> Relationships</a>
+        <a class="chip" href="warriors-module-4.html"><strong>M4</strong> Four Warriors</a>
+        <a class="chip" href="warriors-module-5.html"><strong>M5</strong> Vows & Accountability</a>
+      </nav>
+    </div>
+
+    <section class="panel">
+      <div class="pad">
+        <div class="kicker">
+          <span class="pill">Governed by <b>Sebek Hetep</b> (Ò?é Méjì)</span>
+          <span class="pill">Module 3 of 5</span>
+          <span class="pill">Pressure ? Response ? Mastery</span>
+        </div>
+        <h2 class="title">Module 3 — The Warriors & Ajagun / Ajogun</h2>
+        <p class="lead">
+          Ajagun are neutral energies of testing alignment. Ajogun are energies of affliction arising when discipline and awareness have failed.
+          Warriors teach correct response, prevent decay, and restore order.
+        </p>
+
+        <div class="grid">
+          <div class="box">
+            <h2>Ajagun & Warriors</h2>
+            <p class="muted">Ajagun apply pressure and conditions that demand growth. Warriors teach how to meet Ajagun correctly.</p>
+            <ul>
+              <li>Ajagun apply pressure — Warriors teach response</li>
+              <li>Ajagun test readiness — Warriors build mastery</li>
+              <li>Ajagun initiate struggle — Warriors support devotion</li>
+            </ul>
+            <div class="banner"><b>Key Teaching:</b> Ajagun test alignment. Warriors train you for balance. Mastery is born when both are understood.</div>
+            <div class="badge"><span class="dot ok"></span> Training Pressure (Neutral Test)</div>
+          </div>
+
+          <div class="box">
+            <h2>Ajogun & Warriors</h2>
+            <p class="muted">Ajogun are conditions of disorder and imbalance. Warriors prevent, correct, and contain Ajogun (excess).</p>
+            <ul>
+              <li>Ajogun drain life-energy — Warriors protect life-force</li>
+              <li>Ajogun create stagnation/decay — Warriors restore progress</li>
+              <li>Ajogun thrive in neglect/chaos — Warriors require discipline/order</li>
+              <li>Ajogun multiply when ignored — Warriors resolve imbalance</li>
+            </ul>
+            <div class="banner"><b>Key Teaching:</b> Ajogun warn that order has failed. Warriors restore what was imbalanced.</div>
+            <div class="badge"><span class="dot bad"></span> Affliction Condition (Must Resolve)</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="box">
+          <h2>Warrior Response Map (Practice Table)</h2>
+          <p class="muted">
+            Fill this table for one real situation. The goal is accuracy: label the pressure correctly, then match the response.
+          </p>
+
+          <table aria-label="Warrior Response Map">
+            <thead>
+              <tr>
+                <th style="width:20%">Situation</th>
+                <th style="width:15%">Pressure Type</th>
+                <th style="width:25%">Symptoms / Evidence</th>
+                <th style="width:20%">Warrior Response</th>
+                <th style="width:20%">Next Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><textarea class="cell" data-key="s1" rows="3" placeholder="Describe the situation..."></textarea></td>
+                <td>
+                  <select class="cell" data-key="t1" style="width:100%; padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(0,0,0,.30); color:#f3f4f6;">
+                    <option value="">Select...</option>
+                    <option value="Ajagun (training)">Ajagun (training)</option>
+                    <option value="Ajogun (affliction)">Ajogun (affliction)</option>
+                    <option value="Mixed / unclear">Mixed / unclear</option>
+                  </select>
+                </td>
+                <td><textarea class="cell" data-key="e1" rows="3" placeholder="What proves it? (strengthens? drains?)"></textarea></td>
+                <td><textarea class="cell" data-key="r1" rows="3" placeholder="What would Warrior response look like?"></textarea></td>
+                <td><textarea class="cell" data-key="a1" rows="3" placeholder="One next action you will do within 24 hours"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="btnRow">
+            <button id="saveBtn">Save Map</button>
+            <button class="ghost" id="copyBtn" type="button">Copy Map</button>
+            <button class="ghost" id="clearBtn" type="button">Clear</button>
+          </div>
+          <div class="toast" id="toast">Saved locally (on this device) only.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>Winter Solstice Warriors 2025 • SwamiG Institute • baba@swamiginstitute.com</footer>
+  </div>
+
+  <script>
+    const KEY="sgi_warriors_module_3_map";
+    const toast=document.getElementById("toast");
+    const cells=[...document.querySelectorAll(".cell")];
+
+    function setToast(msg){toast.textContent=msg;}
+    function load(){
+      try{
+        const d=JSON.parse(localStorage.getItem(KEY)||"{}");
+        cells.forEach(el=>{
+          const k=el.dataset.key;
+          if(el.tagName==="SELECT") el.value=d[k]||"";
+          else el.value=d[k]||"";
+        });
+      }catch(e){}
+    }
+    function save(){
+      const payload={ saved_at:new Date().toISOString() };
+      cells.forEach(el=>{
+        payload[el.dataset.key]=el.value;
+      });
+      localStorage.setItem(KEY, JSON.stringify(payload));
+      setToast("Saved locally ?  " + new Date().toLocaleString());
+    }
+    function clearAll(){
+      localStorage.removeItem(KEY);
+      cells.forEach(el=>{ el.value=""; });
+      setToast("Cleared.");
+    }
+    async function copy(){
+      const get=(k)=> (cells.find(x=>x.dataset.key===k)?.value || "").trim();
+      const out =
+`SGI Warriors Mini Course — Module 3 Warrior Response Map
+Situation: ${get("s1")}
+Pressure Type: ${get("t1")}
+Evidence: ${get("e1")}
+Warrior Response: ${get("r1")}
+Next Action (24h): ${get("a1")}`;
+      try{ await navigator.clipboard.writeText(out); setToast("Copied ?"); }
+      catch(e){ setToast("Copy blocked. Select and copy manually."); }
+    }
+
+    document.getElementById("saveBtn").addEventListener("click", save);
+    document.getElementById("clearBtn").addEventListener("click", clearAll);
+    document.getElementById("copyBtn").addEventListener("click", copy);
+
+    load();
+  </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 5 (SGI Styled)
+ File: warriors-module-5.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 5</title>
+  <meta name="description" content="Module 5: Sacrifice, Vows & Accountability — Supporting the Warriors." />
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --ok:#6ee7b7; --warn:#fbbf24;
+      --max:1100px; --radius:20px; --shadow:0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(187,102,255,.28), transparent 55%),
+        radial-gradient(900px 500px at 85% 0%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(900px 500px at 50% 110%, rgba(110,231,183,.10), transparent 55%),
+        var(--bg);
+      font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px; border:1px solid var(--border); background:rgba(0,0,0,.25);
+      border-radius:22px; backdrop-filter: blur(10px);
+      position:sticky; top:12px; z-index:20;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-weight:900;
+      background: linear-gradient(135deg, rgba(187,102,255,.35), rgba(255,209,102,.18));
+      border:1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .brand h1{margin:0; font-size:14px}
+    .brand .sub{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); text-decoration:none; font-size:13px; color:var(--muted);
+      transition:.2s transform,.2s background,.2s border-color;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2)}
+    .chip strong{color:var(--ink)}
+    .panel{border:1px solid var(--border); background:rgba(10,10,14,.55); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+    .pad{padding:18px}
+    .kicker{display:flex; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--muted)}
+    .pill{padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05)}
+    .title{margin:10px 0 8px; font-size:28px; line-height:1.15; letter-spacing:-.4px}
+    .lead{margin:0; color:var(--muted)}
+    .grid{margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px}
+    @media (max-width: 980px){.grid{grid-template-columns:1fr}}
+    .box{border:1px solid var(--border); background:rgba(255,255,255,.03); border-radius:18px; padding:14px}
+    h2{margin:0 0 6px; font-size:18px}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .banner{
+      border:1px solid rgba(255,209,102,.30);
+      background: linear-gradient(135deg, rgba(255,209,102,.16), rgba(255,255,255,.02));
+      border-radius:18px; padding:12px 14px; margin-top:12px;
+    }
+    .divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+    textarea,input{
+      width:100%; border-radius:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.30); color:var(--ink);
+      padding:12px; font:inherit; outline:none;
+    }
+    textarea:focus,input:focus{border-color:rgba(187,102,255,.55); box-shadow:0 0 0 4px var(--ring)}
+    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    button{
+      cursor:pointer; border:none; border-radius:14px;
+      padding:11px 14px; font-weight:800; color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.85));
+    }
+    .ghost{background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--border)}
+    .toast{margin-top:10px; font-size:13px; color:var(--muted)}
+    footer{margin-top:26px; color:rgba(255,255,255,.45); font-size:12px; text-align:center}
+    .checkGrid{display:grid; gap:10px; margin-top:10px}
+    label{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">SGI</div>
+        <div>
+          <h1>SwamiG Institute <span class="sub">Warriors Mini Course • Winter Solstice Series</span></h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="warriors-module-1.html"><strong>M1</strong> Orientation</a>
+        <a class="chip" href="warriors-module-2.html"><strong>M2</strong> Ajagun vs Ajogun</a>
+        <a class="chip" href="warriors-module-3.html"><strong>M3</strong> Relationships</a>
+        <a class="chip" href="warriors-module-4.html"><strong>M4</strong> Four Warriors</a>
+        <a class="chip" href="warriors-module-5.html"><strong>M5</strong> Vows & Accountability</a>
+      </nav>
+    </div>
+
+    <section class="panel">
+      <div class="pad">
+        <div class="kicker">
+          <span class="pill">Governed by <b>Sebek Hetep</b> (Ò?é Méjì)</span>
+          <span class="pill">Module 5 of 5</span>
+          <span class="pill">Sustain Warrior Forces</span>
+        </div>
+        <h2 class="title">Module 5 — Sacrifice, Vows & Accountability</h2>
+        <p class="lead">
+          Warriors are sustained by what you give up, what you swear to, and what you answer for.
+          This module closes the course by establishing ongoing structures that keep Warrior forces active.
+        </p>
+
+        <div class="grid">
+          <div class="box">
+            <h2>Personal Sacrifice</h2>
+            <ul>
+              <li>Removes excess and distraction</li>
+              <li>Builds discipline, focus, discernment, awareness</li>
+              <li>Strengthens the Warriors by training restraint</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h2>Sacred Vows</h2>
+            <ul>
+              <li>Create binding commitments</li>
+              <li>Authorize Warrior intervention</li>
+              <li>Establish boundaries and define conduct</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h2>Accountability</h2>
+            <ul>
+              <li>Sustains discipline over time</li>
+              <li>Prevents relapse and stabilizes alignment</li>
+              <li>Stops Ajagun from becoming Ajogun</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner">
+          <b>Functional Truth:</b> Sacrifice trains the Warriors • Vows authorize the Warriors • Accountability keeps the Warriors active.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="box">
+          <h2>Inner Jihad (Self-Conquest)</h2>
+          <p class="muted">
+            What is your long-standing personal struggle? How can initiation through Warriors support your self-conquest?
+          </p>
+
+          <div class="checkGrid">
+            <label><input type="checkbox" class="ck" data-k="sac" /> I named one distraction/excess I will remove (sacrifice).</label>
+            <label><input type="checkbox" class="ck" data-k="vow" /> I wrote one vow that defines my conduct and boundaries.</label>
+            <label><input type="checkbox" class="ck" data-k="acc" /> I chose an accountability method (person, log, schedule).</label>
+          </div>
+
+          <div class="divider"></div>
+
+          <label class="muted" for="rName">Name (optional)</label>
+          <input id="rName" placeholder="Your name" />
+          <label class="muted" for="sacText">My Sacrifice (what I give up)</label>
+          <textarea id="sacText" rows="4" placeholder="Example: I will remove ______ for 21 days to strengthen discipline."></textarea>
+
+          <label class="muted" for="vowText">My Sacred Vow (what I swear to)</label>
+          <textarea id="vowText" rows="4" placeholder="Example: I vow to _______ and to refuse ________."></textarea>
+
+          <label class="muted" for="accText">My Accountability (what I answer for)</label>
+          <textarea id="accText" rows="4" placeholder="Example: Daily log + weekly check-in with ______ on ______."></textarea>
+
+          <label class="muted" for="jihadText">Inner Jihad Reflection</label>
+          <textarea id="jihadText" rows="6" placeholder="My long-standing struggle is... Warriors can support my self-conquest by..."></textarea>
+
+          <div class="btnRow">
+            <button id="saveBtn">Save Commitments</button>
+            <button class="ghost" id="copyBtn" type="button">Copy</button>
+            <button class="ghost" id="clearBtn" type="button">Clear</button>
+          </div>
+          <div class="toast" id="toast">Saved locally (on this device) only.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Winter Solstice Warriors 2025 • SwamiG Institute • baba@swamiginstitute.com</footer>
+  </div>
+
+  <script>
+    const KEY="sgi_warriors_module_5_commitments";
+    const toast=document.getElementById("toast");
+    const nameEl=document.getElementById("rName");
+    const sacEl=document.getElementById("sacText");
+    const vowEl=document.getElementById("vowText");
+    const accEl=document.getElementById("accText");
+    const jihEl=document.getElementById("jihadText");
+    const checks=[...document.querySelectorAll(".ck")];
+
+    function setToast(msg){toast.textContent=msg;}
+    function load(){
+      try{
+        const d=JSON.parse(localStorage.getItem(KEY)||"{}");
+        nameEl.value=d.name||"";
+        sacEl.value=d.sac||"";
+        vowEl.value=d.vow||"";
+        accEl.value=d.acc||"";
+        jihEl.value=d.jih||"";
+        checks.forEach(c=>c.checked=!!d[c.dataset.k]);
+      }catch(e){}
+    }
+    function save(){
+      const payload={
+        name:nameEl.value.trim(),
+        sac:sacEl.value.trim(),
+        vow:vowEl.value.trim(),
+        acc:accEl.value.trim(),
+        jih:jihEl.value.trim(),
+        saved_at:new Date().toISOString()
+      };
+      checks.forEach(c=>payload[c.dataset.k]=c.checked);
+      localStorage.setItem(KEY, JSON.stringify(payload));
+      setToast("Saved locally ?  " + new Date().toLocaleString());
+    }
+    function clearAll(){
+      localStorage.removeItem(KEY);
+      nameEl.value=""; sacEl.value=""; vowEl.value=""; accEl.value=""; jihEl.value="";
+      checks.forEach(c=>c.checked=false);
+      setToast("Cleared.");
+    }
+    async function copy(){
+      const out=
+`SGI Warriors Mini Course — Module 5 Commitments
+Name: ${nameEl.value.trim()||"(blank)"}
+
+Sacrifice:
+${sacEl.value.trim()}
+
+Sacred Vow:
+${vowEl.value.trim()}
+
+Accountability:
+${accEl.value.trim()}
+
+Inner Jihad Reflection:
+${jihEl.value.trim()}
+
+Checklist:
+- Sacrifice named: ${checks.find(x=>x.dataset.k==="sac")?.checked ? "Yes" : "No"}
+- Vow written: ${checks.find(x=>x.dataset.k==="vow")?.checked ? "Yes" : "No"}
+- Accountability chosen: ${checks.find(x=>x.dataset.k==="acc")?.checked ? "Yes" : "No"}
+`;
+      try{ await navigator.clipboard.writeText(out); setToast("Copied ?"); }
+      catch(e){ setToast("Copy blocked. Select and copy manually."); }
+    }
+
+    document.getElementById("saveBtn").addEventListener("click", save);
+    document.getElementById("clearBtn").addEventListener("click", clearAll);
+    document.getElementById("copyBtn").addEventListener("click", copy);
+    load();
+  </script>
+</body>
+</html>

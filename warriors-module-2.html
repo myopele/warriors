@@ -1,0 +1,270 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 2 (SGI Styled)
+ File: warriors-module-2.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 2</title>
+  <meta name="description" content="Module 2: Ajagun vs Ajogun — Critical Energy Distinction." />
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --ok:#6ee7b7; --warn:#fbbf24; --bad:#fb7185;
+      --max:1100px; --radius:20px;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(187,102,255,.28), transparent 55%),
+        radial-gradient(900px 500px at 85% 0%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(900px 500px at 50% 110%, rgba(110,231,183,.10), transparent 55%),
+        var(--bg);
+      font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px; border:1px solid var(--border); background:rgba(0,0,0,.25);
+      border-radius:22px; backdrop-filter: blur(10px);
+      position:sticky; top:12px; z-index:20;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-weight:900;
+      background: linear-gradient(135deg, rgba(187,102,255,.35), rgba(255,209,102,.18));
+      border:1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .brand h1{margin:0; font-size:14px}
+    .brand .sub{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); text-decoration:none; font-size:13px; color:var(--muted);
+      transition:.2s transform,.2s background,.2s border-color;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2)}
+    .chip strong{color:var(--ink)}
+    .panel{
+      border:1px solid var(--border);
+      background:rgba(10,10,14,.55);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:18px}
+    .kicker{display:flex; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--muted)}
+    .pill{padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.05)}
+    .title{margin:10px 0 8px; font-size:28px; line-height:1.15; letter-spacing:-.4px}
+    .lead{margin:0; color:var(--muted)}
+    .grid{margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 920px){.grid{grid-template-columns:1fr}}
+    .box{
+      border:1px solid var(--border); background:rgba(255,255,255,.03);
+      border-radius:18px; padding:14px;
+    }
+    h2{margin:0 0 6px; font-size:18px}
+    h3{margin:0 0 6px; font-size:15px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .tagRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .tag{padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--muted)}
+    .tag.ok{border-color:rgba(110,231,183,.35)}
+    .tag.bad{border-color:rgba(251,113,133,.35)}
+    .divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
+    .banner{
+      border:1px solid rgba(255,209,102,.30);
+      background: linear-gradient(135deg, rgba(255,209,102,.16), rgba(255,255,255,.02));
+      border-radius:18px; padding:12px 14px; margin-top:12px;
+    }
+    textarea,input{
+      width:100%; border-radius:14px; border:1px solid var(--border);
+      background:rgba(0,0,0,.30); color:var(--ink);
+      padding:12px; font:inherit; outline:none;
+    }
+    textarea:focus,input:focus{border-color:rgba(187,102,255,.55); box-shadow:0 0 0 4px var(--ring)}
+    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    button{
+      cursor:pointer; border:none; border-radius:14px;
+      padding:11px 14px; font-weight:800; color:#120a18;
+      background: linear-gradient(135deg, var(--accent), rgba(255,209,102,.85));
+    }
+    .ghost{background:rgba(255,255,255,.06); color:var(--ink); border:1px solid var(--border)}
+    .toast{margin-top:10px; font-size:13px; color:var(--muted)}
+    footer{margin-top:26px; color:rgba(255,255,255,.45); font-size:12px; text-align:center}
+    .cols{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 920px){.cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">SGI</div>
+        <div>
+          <h1>SwamiG Institute <span class="sub">Warriors Mini Course • Winter Solstice Series</span></h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="warriors-module-1.html"><strong>M1</strong> Orientation</a>
+        <a class="chip" href="warriors-module-2.html"><strong>M2</strong> Ajagun vs Ajogun</a>
+        <a class="chip" href="warriors-module-3.html"><strong>M3</strong> Relationships</a>
+        <a class="chip" href="warriors-module-4.html"><strong>M4</strong> Four Warriors</a>
+        <a class="chip" href="warriors-module-5.html"><strong>M5</strong> Vows & Accountability</a>
+      </nav>
+    </div>
+
+    <section class="panel">
+      <div class="pad">
+        <div class="kicker">
+          <span class="pill">Governed by <b>Sebek Hetep</b> (Ò?é Méjì)</span>
+          <span class="pill">Module 2 of 5</span>
+          <span class="pill">Critical Energy Distinction</span>
+        </div>
+        <h2 class="title">Module 2 — Ajagun vs Ajogun</h2>
+        <p class="lead">
+          Ajagun are energy frequencies that <b>strengthen</b> and <b>train</b>. Ajogun are energy frequencies that <b>weaken</b> and <b>drain</b>.
+          Mastery begins when you correctly label pressure: <b>training</b> vs <b>affliction</b>.
+        </p>
+
+        <div class="grid">
+          <div class="box">
+            <h2>Ajagun — Energies of Challenge</h2>
+            <div class="tagRow">
+              <span class="tag ok">Strengthen</span>
+              <span class="tag ok">Train</span>
+              <span class="tag ok">Mastery Required</span>
+            </div>
+            <div class="divider"></div>
+            <ul>
+              <li>Initiate struggle and growth</li>
+              <li>Catalysts for destiny activation</li>
+              <li>Train discipline, courage, and will</li>
+              <li>Necessary for initiation and priesthood</li>
+              <li>Strengthen Ori through conscious confrontation and transformation</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2>Ajogun — Energies of Affliction</h2>
+            <div class="tagRow">
+              <span class="tag bad">Weaken</span>
+              <span class="tag bad">Drain</span>
+              <span class="tag bad">Must Resolve</span>
+            </div>
+            <div class="divider"></div>
+            <ul>
+              <li>Forces of imbalance, obstruction, and disintegration</li>
+              <li>Cause confusion, stagnation, and decay</li>
+              <li>Feed on neglect and unconsciousness</li>
+              <li>Must be corrected, restrained, or removed</li>
+              <li>Weaken Ori and derail destiny — resolved by Know ThySelf (again)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner">
+          <b>Functional Truth:</b> Ajagun = training pressure. Ajogun = unresolved disorder.
+          Your job is to prevent Ajagun from becoming Ajogun through neglect.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="cols">
+          <div class="box">
+            <h3>Quick Diagnostic</h3>
+            <p class="muted">Mark the statements that fit your current situation.</p>
+            <label class="muted"><input type="checkbox" class="ck" data-type="ajagun" /> I feel challenged but stronger afterward.</label><br/>
+            <label class="muted"><input type="checkbox" class="ck" data-type="ajagun" /> The pressure demands discipline and skill.</label><br/>
+            <label class="muted"><input type="checkbox" class="ck" data-type="ajogun" /> I feel drained, confused, or decaying over time.</label><br/>
+            <label class="muted"><input type="checkbox" class="ck" data-type="ajogun" /> The situation worsens when ignored.</label><br/>
+            <div class="divider"></div>
+            <div class="muted" id="scoreLine">Select items to see a simple read.</div>
+          </div>
+
+          <div class="box">
+            <h3>Reflection Assignment</h3>
+            <p class="muted">Identify one Ajagun and one Ajogun in your life. Explain how awareness shaped the outcome.</p>
+            <label class="muted" for="rName">Name (optional)</label>
+            <input id="rName" placeholder="Your name" />
+            <label class="muted" for="rText">Your reflection</label>
+            <textarea id="rText" rows="9" placeholder="Write here..."></textarea>
+            <div class="btnRow">
+              <button id="saveBtn">Save</button>
+              <button class="ghost" id="copyBtn" type="button">Copy</button>
+              <button class="ghost" id="clearBtn" type="button">Clear</button>
+            </div>
+            <div class="toast" id="toast">Saved locally (on this device) only.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>Winter Solstice Warriors 2025 • SwamiG Institute • baba@swamiginstitute.com</footer>
+  </div>
+
+  <script>
+    // Local reflection save
+    const KEY="sgi_warriors_module_2_reflection";
+    const nameEl=document.getElementById("rName");
+    const textEl=document.getElementById("rText");
+    const toast=document.getElementById("toast");
+    const scoreLine=document.getElementById("scoreLine");
+
+    function setToast(msg){toast.textContent=msg;}
+    function load(){
+      try{
+        const d=JSON.parse(localStorage.getItem(KEY)||"{}");
+        nameEl.value=d.name||"";
+        textEl.value=d.text||"";
+      }catch(e){}
+    }
+    function save(){
+      const payload={name:nameEl.value.trim(), text:textEl.value.trim(), saved_at:new Date().toISOString()};
+      localStorage.setItem(KEY, JSON.stringify(payload));
+      setToast("Saved locally ?  " + new Date().toLocaleString());
+    }
+    async function copy(){
+      const out=`SGI Warriors Mini Course — Module 2 Reflection\nName: ${nameEl.value.trim()||"(blank)"}\n\n${textEl.value.trim()}`;
+      try{ await navigator.clipboard.writeText(out); setToast("Copied ?"); }
+      catch(e){ setToast("Copy blocked. Select and copy manually."); }
+    }
+    function clearAll(){
+      localStorage.removeItem(KEY);
+      nameEl.value=""; textEl.value="";
+      setToast("Cleared.");
+    }
+
+    document.getElementById("saveBtn").addEventListener("click", save);
+    document.getElementById("copyBtn").addEventListener("click", copy);
+    document.getElementById("clearBtn").addEventListener("click", clearAll);
+
+    // Diagnostic scoring
+    function updateScore(){
+      const checks=[...document.querySelectorAll(".ck")].filter(x=>x.checked);
+      const a=checks.filter(x=>x.dataset.type==="ajagun").length;
+      const o=checks.filter(x=>x.dataset.type==="ajogun").length;
+      if(!checks.length){
+        scoreLine.textContent="Select items to see a simple read.";
+        return;
+      }
+      if(a>o) scoreLine.textContent=`Read: leaning Ajagun (training). Ajagun=${a}, Ajogun=${o}. Keep discipline so it doesn't decay into Ajogun.`;
+      else if(o>a) scoreLine.textContent=`Read: leaning Ajogun (affliction). Ajagun=${a}, Ajogun=${o}. Prioritize correction, restraint, and removal of disorder.`;
+      else scoreLine.textContent=`Read: mixed signals. Ajagun=${a}, Ajogun=${o}. Separate what trains you from what drains you.`;
+    }
+    document.querySelectorAll(".ck").forEach(c=>c.addEventListener("change", updateScore));
+    load();
+  </script>
+</body>
+</html>
