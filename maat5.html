@@ -1,0 +1,181 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 5 (Ma’at Integration)
+ File: warriors-module-5.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 5: Ancestors, Nature & Completion</title>
+  <meta name="description" content="SGI Warrior Training — Module 5: Ancestors, water, nature, completion. Oaths and final declaration." />
+  <style>
+    :root{--bg:#0b0b0f;--ink:#f3f4f6;--muted:#bfc3d1;--border:rgba(255,255,255,.12);--accent:#bb66ff;--accent2:#ffd166;--radius:20px;--max:1100px;--shadow:0 18px 50px rgba(0,0,0,.45);}
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 20% -10%, rgba(187,102,255,.20), transparent 55%),
+      radial-gradient(900px 600px at 90% 10%, rgba(255,209,102,.12), transparent 50%),
+      radial-gradient(800px 700px at 50% 110%, rgba(102,255,178,.10), transparent 50%),
+      var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px;border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.72));border-radius:18px;box-shadow:var(--shadow);
+      position:sticky;top:10px;z-index:9;backdrop-filter:blur(10px);}
+    .brand{display:flex;align-items:center;gap:10px;min-width:190px}
+    .brand .txt{line-height:1.15}
+    .brand .txt strong{display:block;font-size:14px;letter-spacing:.4px}
+    .brand .txt span{display:block;font-size:12px;color:var(--muted)}
+    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;flex:1}
+    .chip{text-decoration:none;font-size:12.5px;padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;white-space:nowrap}
+    .chip:hover{transform:translateY(-1px);border-color:rgba(187,102,255,.45);background:rgba(187,102,255,.10)}
+    .chip.active{border-color:rgba(255,209,102,.55);background:rgba(255,209,102,.10)}
+    .cta{display:flex;gap:10px;align-items:center;justify-content:flex-end;min-width:190px}
+    .btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;
+      border:1px solid rgba(187,102,255,.5);background:linear-gradient(180deg, rgba(187,102,255,.22), rgba(187,102,255,.08));
+      font-weight:650;font-size:13px;transition:transform .15s ease,filter .15s ease}
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+    @media(max-width:900px){.cta{display:none}}
+    .hero{margin-top:18px;border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.88), rgba(20,20,28,.62));box-shadow:var(--shadow);overflow:hidden}
+    .heroInner{padding:22px 20px;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}
+    @media(max-width:900px){.heroInner{grid-template-columns:1fr}}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-size:12px;color:var(--muted);padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
+    h1{margin:12px 0 6px;font-size:28px;letter-spacing:.2px}
+    .subtitle{margin:0;color:var(--muted);max-width:70ch}
+    .quote{border-left:3px solid rgba(255,209,102,.55);padding:10px 12px;margin:10px 0 0;background:rgba(255,209,102,.06);border-radius:12px}
+    .sideCard{border-left:1px solid var(--border);padding-left:18px}
+    @media(max-width:900px){.sideCard{border-left:none;padding-left:0}}
+    .box{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.04);padding:14px;margin:10px 0}
+    .box h3{margin:0 0 6px;font-size:14px}
+    .box p{margin:0;color:var(--muted);font-size:13.5px}
+    .grid{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.64));padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p{margin:8px 0;color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)} li{margin:6px 0}
+    .oath{
+      border:1px solid rgba(255,209,102,.28);
+      background:rgba(255,209,102,.06);
+      border-radius:16px;
+      padding:14px;
+      color:rgba(255,255,255,.86);
+    }
+    .oath b{color:var(--ink)}
+    .logoWrap{width:34px;height:34px;flex:0 0 34px;border-radius:12px;border:1px solid rgba(187,102,255,.35);
+      background:radial-gradient(circle at 30% 30%, rgba(187,102,255,.35), rgba(255,255,255,.03) 55%, rgba(0,0,0,0) 60%), rgba(255,255,255,.03);
+      display:grid;place-items:center;position:relative;overflow:hidden}
+    .logoWrap::after{content:"";position:absolute;inset:-40%;
+      background:conic-gradient(from 180deg, rgba(187,102,255,0), rgba(187,102,255,.20), rgba(255,209,102,.16), rgba(187,102,255,0));
+      animation:spin 4.2s linear infinite}
+    .logoInner{position:relative;z-index:1;width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10)}
+    .logoImg{width:22px;height:22px;border-radius:7px;object-fit:contain;animation:float 2.8s ease-in-out infinite}
+    .logoSvg{width:20px;height:20px;display:none;animation:float 2.8s ease-in-out infinite}
+    @keyframes spin{to{transform:rotate(360deg)}} @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6px)}}
+    .footer{margin-top:28px;text-align:center;color:rgba(255,255,255,.45);font-size:12px}
+    .small{font-size:12.5px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <a class="logoWrap" href="index.html" aria-label="Back to index">
+          <div class="logoInner">
+            <img class="logoImg" src="tn_SwamiG.gif" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="logoSvg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 6c9.6 0 18.4 5.4 22.7 14.1" stroke="rgba(255,209,102,.85)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M10.2 20.1C14.7 11.4 23 6 32 6" stroke="rgba(187,102,255,.9)" stroke-width="3" stroke-linecap="round"/>
+              <text x="18" y="36" font-size="14" font-weight="800" fill="rgba(255,255,255,.8)">SGI</text>
+            </svg>
+          </div>
+        </a>
+        <div class="txt"><strong>SwamiG Institute</strong><span>Warriors Mini Course • Ma’at Integration</span></div>
+      </div>
+      <nav class="nav" aria-label="Modules">
+        <a class="chip" href="warriors-module-1.html">Mod 1</a>
+        <a class="chip" href="warriors-module-2.html">Mod 2</a>
+        <a class="chip" href="warriors-module-3.html">Mod 3</a>
+        <a class="chip" href="warriors-module-4.html">Mod 4</a>
+        <a class="chip active" href="warriors-module-5.html">Mod 5</a>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="warriors-module-4.html">← Back</a>
+        <a class="btn" href="index.html">Finish ✓</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><b>Module 5</b> • Ancestors • Nature • Completion</div>
+          <h1>Ancestors, Nature & Completion</h1>
+          <p class="subtitle">
+            The Warrior completes the cycle by anchoring power in continuity:
+            honoring the dead, respecting life, protecting water, and sealing the oath of accountability.
+          </p>
+          <div class="quote"><b>SGI Doctrine:</b> A Warrior stands with the ancestors, not ahead of them.</div>
+        </div>
+        <aside class="sideCard">
+          <div class="box"><h3>Core Confessions</h3><p>37 • 40 • 41</p></div>
+          <div class="box"><h3>Completion</h3><p>Final oath + Warrior declaration</p></div>
+          <div class="box"><h3>Daily Time</h3><p>8–12 minutes</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Practices</h2>
+        <ul>
+          <li><b>Ancestor Acknowledgment:</b> a simple word, water, or prayer of remembrance.</li>
+          <li><b>Water Respect:</b> no pollution in action or intention (cleanliness, protection).</li>
+          <li><b>Life Respect:</b> do not mistreat animals; do not harm what you don’t need to harm.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Module 5 Confessions</h2>
+        <ul>
+          <li><b>37</b> — I have not mistreated cattle.</li>
+          <li><b>40</b> — I have not deprived the dead of funerary offerings.</li>
+          <li><b>41</b> — I have not polluted running water.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>SGI Warrior Oath</h2>
+        <div class="oath">
+          <p style="margin:0 0 8px;"><b>I do not violate Ma’at.</b></p>
+          <p style="margin:0 0 8px;">I do not misuse force.</p>
+          <p style="margin:0 0 8px;">I do not corrupt speech.</p>
+          <p style="margin:0 0 8px;">I do not dishonor ancestors.</p>
+          <p style="margin:0 0 8px;">I stand as Warrior, not predator.</p>
+          <p style="margin:0;"><b>If I break this law, I correct myself immediately.</b></p>
+        </div>
+        <p class="small" style="margin-top:10px;">Speak aloud. Then sign your name in your log.</p>
+      </div>
+
+      <div class="card">
+        <h2>Completion Declaration</h2>
+        <p>Write and keep this as your closing statement:</p>
+        <div class="oath" style="border-color:rgba(187,102,255,.28);background:rgba(187,102,255,.07);">
+          <p style="margin:0 0 8px;">I have walked the law.</p>
+          <p style="margin:0 0 8px;">I have restrained my power.</p>
+          <p style="margin:0 0 8px;">I have honored the unseen.</p>
+          <p style="margin:0 0 8px;">I am not perfected — I am accountable.</p>
+          <p style="margin:0;"><b>I stand as an SGI Warrior.</b></p>
+        </div>
+        <p class="small" style="margin-top:10px;">Submit your declaration with your final 7-day log summary.</p>
+      </div>
+    </section>
+
+    <div class="footer">Governed by Tehuti (+) Irete</div>
+  </div>
+</body>
+</html>
