@@ -1,0 +1,362 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 1 (Ma’at Integration)
+ File: warriors-module-1.html
+ Notes:
+  - Put this file in the SAME folder as:
+      warriors-module-2.html
+      warriors-module-3.html
+      warriors-module-4.html
+      warriors-module-5.html
+      SwamiG.gif   (optional)
+      tn_SwamiG.gif (optional)
+  - If no logo files exist, the inline SVG “SGI” mark will show.
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 1: Law Before Force</title>
+  <meta name="description" content="SGI Warrior Training — Module 1: Law Before Force. Ma’at as Warrior Law, Ori discipline, accountability." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --good:#4ade80; --warn:#fbbf24;
+      --radius:20px; --max:1100px;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(187,102,255,.25), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(800px 700px at 50% 110%, rgba(102,255,178,.10), transparent 50%),
+        var(--bg);
+      color:var(--ink);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 14px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.72));
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      position:sticky; top:10px; z-index:9;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:190px;
+    }
+    .brand .txt{line-height:1.15}
+    .brand .txt strong{display:block; font-size:14px; letter-spacing:.4px}
+    .brand .txt span{display:block; font-size:12px; color:var(--muted)}
+    .nav{
+      display:flex; flex-wrap:wrap; gap:8px; justify-content:center; flex:1;
+    }
+    .chip{
+      text-decoration:none;
+      font-size:12.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); border-color:rgba(187,102,255,.45); background:rgba(187,102,255,.10)}
+    .chip.active{border-color:rgba(255,209,102,.55); background:rgba(255,209,102,.10)}
+    .cta{
+      display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:190px;
+    }
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(187,102,255,.5);
+      background:linear-gradient(180deg, rgba(187,102,255,.22), rgba(187,102,255,.08));
+      font-weight:650;
+      font-size:13px;
+      transition:transform .15s ease, filter .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.08)}
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.88), rgba(20,20,28,.62));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroInner{
+      padding:22px 20px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .heroInner{grid-template-columns:1fr}
+      .cta{display:none}
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+    .kicker b{color:var(--ink)}
+    h1{margin:12px 0 6px; font-size:28px; letter-spacing:.2px}
+    .subtitle{margin:0; color:var(--muted); max-width:70ch}
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .pill{
+      font-size:12px; padding:7px 10px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.04);
+    }
+    .pill.good{border-color:rgba(74,222,128,.35); background:rgba(74,222,128,.08)}
+    .pill.warn{border-color:rgba(251,191,36,.35); background:rgba(251,191,36,.08)}
+    .sideCard{
+      border-left:1px solid var(--border);
+      padding-left:18px;
+    }
+    @media(max-width:900px){.sideCard{border-left:none; padding-left:0}}
+    .box{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      padding:14px 14px;
+      margin:10px 0;
+    }
+    .box h3{margin:0 0 6px; font-size:14px}
+    .box p{margin:0; color:var(--muted); font-size:13.5px}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.64));
+      padding:18px 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    .card p{margin:8px 0; color:var(--muted)}
+    ul{margin:10px 0 0 18px; color:var(--muted)}
+    li{margin:6px 0}
+    .hr{height:1px; background:var(--border); margin:14px 0}
+    .quote{
+      border-left:3px solid rgba(255,209,102,.55);
+      padding:10px 12px;
+      margin:10px 0 0;
+      background:rgba(255,209,102,.06);
+      border-radius:12px;
+      color:var(--ink);
+    }
+    .small{font-size:12.5px; color:var(--muted)}
+    .footer{
+      margin-top:28px;
+      text-align:center;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+    }
+
+    /* ---------- Small animated logo ---------- */
+    .logoWrap{
+      width:34px; height:34px; flex:0 0 34px;
+      border-radius:12px;
+      border:1px solid rgba(187,102,255,.35);
+      background:radial-gradient(circle at 30% 30%, rgba(187,102,255,.35), rgba(255,255,255,.03) 55%, rgba(0,0,0,.0) 60%),
+                 rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .logoWrap::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background:conic-gradient(from 180deg, rgba(187,102,255,.0), rgba(187,102,255,.20), rgba(255,209,102,.16), rgba(187,102,255,.0));
+      animation:spin 4.2s linear infinite;
+      filter: blur(.2px);
+    }
+    .logoInner{
+      position:relative; z-index:1;
+      width:28px; height:28px; border-radius:10px;
+      display:grid; place-items:center;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .logoImg{
+      width:22px; height:22px; display:block;
+      border-radius:7px;
+      object-fit:contain;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+      animation:float 2.8s ease-in-out infinite;
+    }
+    .logoSvg{
+      width:20px; height:20px;
+      animation:float 2.8s ease-in-out infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-1.6px)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="topbar" role="navigation" aria-label="SGI Warrior Modules">
+      <div class="brand">
+        <a class="logoWrap" href="index.html" aria-label="Back to index">
+          <div class="logoInner">
+            <!-- Optional: if SwamiG.gif or tn_SwamiG.gif exists, it will load; otherwise SVG shows -->
+            <img class="logoImg" src="tn_SwamiG.gif" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="logoSvg" viewBox="0 0 64 64" fill="none" style="display:none" aria-hidden="true">
+              <path d="M32 6c9.6 0 18.4 5.4 22.7 14.1" stroke="rgba(255,209,102,.85)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M10.2 20.1C14.7 11.4 23 6 32 6" stroke="rgba(187,102,255,.9)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M14 37c0-10 8-18 18-18h10" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M50 27v10c0 10-8 18-18 18H22" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-linecap="round"/>
+              <text x="18" y="36" font-size="14" font-weight="800" fill="rgba(255,255,255,.8)">SGI</text>
+            </svg>
+          </div>
+        </a>
+        <div class="txt">
+          <strong>SwamiG Institute</strong>
+          <span>Warriors Mini Course • Ma’at Integration</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Modules">
+        <a class="chip active" href="warriors-module-1.html">Mod 1</a>
+        <a class="chip" href="warriors-module-2.html">Mod 2</a>
+        <a class="chip" href="warriors-module-3.html">Mod 3</a>
+        <a class="chip" href="warriors-module-4.html">Mod 4</a>
+        <a class="chip" href="warriors-module-5.html">Mod 5</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="warriors-module-2.html">Next →</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Module hero">
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><b>Module 1</b> • Law Before Force • Ori Discipline</div>
+          <h1>Law Before Force</h1>
+          <p class="subtitle">
+            The Warrior installs <b>Ma’at</b> as operating law before learning power. This module trains you to
+            correct yourself within 24 hours and prevents you from becoming the Ajogun you oppose.
+          </p>
+
+          <div class="pillRow">
+            <span class="pill good">Focus: Truth + Integrity</span>
+            <span class="pill warn">Rule: Correction in 24h</span>
+            <span class="pill">Mode: Daily accountability</span>
+          </div>
+
+          <div class="quote">
+            <b>SGI Doctrine:</b> A Warrior without law becomes Ajogun.
+          </div>
+        </div>
+
+        <aside class="sideCard">
+          <div class="box">
+            <h3>Core Confessions</h3>
+            <p>1 • 8 • 16 • 24 • 34 • 42</p>
+          </div>
+          <div class="box">
+            <h3>Required Memorization</h3>
+            <p>Confessions: <b>1</b>, <b>8</b>, <b>42</b></p>
+          </div>
+          <div class="box">
+            <h3>Daily Time</h3>
+            <p>8–12 minutes (AM read + PM log)</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Lesson Objectives</h2>
+        <ul>
+          <li>Install Ma’at as <b>non-negotiable law</b> (not mood, not preference).</li>
+          <li>Use Ori as the <b>internal judge</b> (self-audit before blame).</li>
+          <li>Apply the SGI correction rule: <b>Fix it within 24 hours.</b></li>
+        </ul>
+        <div class="hr"></div>
+        <p class="small">
+          This module is not about perfection. It’s about <b>accountability speed</b>.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Practices</h2>
+        <ul>
+          <li><b>Morning Recitation:</b> read today’s confession aloud (1 minute).</li>
+          <li><b>Speech Restraint Drill:</b> no exaggeration, no “extra words,” no hidden insult.</li>
+          <li><b>Pause Protocol:</b> before action, ask: “Is this Ma’at or ego?”</li>
+        </ul>
+        <div class="hr"></div>
+        <p class="small">
+          If you violate: <b>correct immediately</b> (apology, repair, restitution, silence).
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Assignment</h2>
+        <p>
+          Write 7–12 lines answering:
+        </p>
+        <ul>
+          <li>Where did Ma’at restrain impulse today?</li>
+          <li>What would I have done without law?</li>
+          <li>What correction did I perform (if needed)?</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Module 1 Confessions</h2>
+        <ul>
+          <li><b>1</b> — I have not committed sin.</li>
+          <li><b>8</b> — I have not uttered lies.</li>
+          <li><b>16</b> — I am not a man of deceit.</li>
+          <li><b>24</b> — I have not transgressed the law.</li>
+          <li><b>34</b> — I have not been arrogant.</li>
+          <li><b>42</b> — I have not spoken arrogantly.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">Governed by Tehuti (+) Irete</div>
+  </div>
+
+  <script>
+    // Subtle: highlight current module chip automatically if user duplicates template.
+    (function(){
+      const path = (location.pathname.split("/").pop() || "").toLowerCase();
+      document.querySelectorAll(".chip").forEach(a=>{
+        const href = (a.getAttribute("href")||"").toLowerCase();
+        if(href && href === path){ a.classList.add("active"); }
+      });
+    })();
+  </script>
+</body>
+</html>
