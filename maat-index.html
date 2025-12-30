@@ -1,0 +1,490 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — INDEX (Ma’at Integration)
+ File: index.html
+ Notes:
+  - Put this file in the SAME folder as:
+      warriors-module-1.html
+      warriors-module-2.html
+      warriors-module-3.html
+      warriors-module-4.html
+      warriors-module-5.html
+      SwamiG.gif (optional)
+      tn_SwamiG.gif (optional)
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SwamiG Institute — Warriors Mini Course (Ma’at Integration)</title>
+  <meta name="description" content="SwamiG Institute — Warriors Mini Course: Ma’at as Warrior Law, Ajagun discipline, and 42-day accountability cycle." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166; --good:#4ade80; --warn:#fbbf24;
+      --radius:22px; --max:1120px;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 720px at 20% -10%, rgba(187,102,255,.26), transparent 55%),
+        radial-gradient(900px 620px at 90% 10%, rgba(255,209,102,.14), transparent 50%),
+        radial-gradient(900px 700px at 50% 115%, rgba(102,255,178,.10), transparent 52%),
+        var(--bg);
+      color:var(--ink);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 14px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.72));
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      position:sticky; top:10px; z-index:9;
+      backdrop-filter: blur(10px);
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:220px}
+    .brand .txt{line-height:1.12}
+    .brand .txt strong{display:block; font-size:14px; letter-spacing:.4px}
+    .brand .txt span{display:block; font-size:12px; color:var(--muted)}
+    .nav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; flex:1}
+    .chip{
+      text-decoration:none;
+      font-size:12.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .chip:hover{transform:translateY(-1px); border-color:rgba(187,102,255,.45); background:rgba(187,102,255,.10)}
+    .cta{display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:220px}
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(187,102,255,.5);
+      background:linear-gradient(180deg, rgba(187,102,255,.22), rgba(187,102,255,.08));
+      font-weight:650;
+      font-size:13px;
+      transition:transform .15s ease, filter .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.08)}
+    @media (max-width: 900px){
+      .cta{display:none}
+    }
+
+    /* Small animated logo */
+    .logoWrap{
+      width:34px; height:34px; flex:0 0 34px;
+      border-radius:12px;
+      border:1px solid rgba(187,102,255,.35);
+      background:radial-gradient(circle at 30% 30%, rgba(187,102,255,.35), rgba(255,255,255,.03) 55%, rgba(0,0,0,.0) 60%),
+                 rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      position:relative; overflow:hidden;
+    }
+    .logoWrap::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background:conic-gradient(from 180deg, rgba(187,102,255,.0), rgba(187,102,255,.20), rgba(255,209,102,.16), rgba(187,102,255,.0));
+      animation:spin 4.2s linear infinite;
+    }
+    .logoInner{
+      position:relative; z-index:1;
+      width:28px; height:28px; border-radius:10px;
+      display:grid; place-items:center;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .logoImg{
+      width:22px; height:22px; display:block;
+      border-radius:7px;
+      object-fit:contain;
+      animation:float 2.8s ease-in-out infinite;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+    }
+    .logoSvg{
+      width:20px; height:20px;
+      animation:float 2.8s ease-in-out infinite;
+      display:none;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6px)}}
+
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.90), rgba(20,20,28,.62));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroInner{
+      padding:24px 20px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .heroInner{grid-template-columns:1fr} }
+
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; color:var(--muted);
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+    h1{margin:12px 0 6px; font-size:30px; letter-spacing:.2px}
+    .subtitle{margin:0; color:var(--muted); max-width:72ch}
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .pill{
+      font-size:12px; padding:7px 10px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.04);
+    }
+    .pill.good{border-color:rgba(74,222,128,.35); background:rgba(74,222,128,.08)}
+    .pill.warn{border-color:rgba(251,191,36,.35); background:rgba(251,191,36,.08)}
+    .aside{
+      border-left:1px solid var(--border);
+      padding-left:18px;
+    }
+    @media(max-width:900px){ .aside{border-left:none; padding-left:0} }
+    .box{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      padding:14px 14px;
+      margin:10px 0;
+    }
+    .box h3{margin:0 0 6px; font-size:14px}
+    .box p{margin:0; color:var(--muted); font-size:13.5px}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.64));
+      padding:18px 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    .card p{margin:8px 0; color:var(--muted)}
+    .card .meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .tag{
+      font-size:12px; padding:6px 9px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+    }
+    .tag.gold{border-color:rgba(255,209,102,.35); background:rgba(255,209,102,.06); color:rgba(255,255,255,.78)}
+    .tag.purple{border-color:rgba(187,102,255,.38); background:rgba(187,102,255,.07); color:rgba(255,255,255,.78)}
+    .tag.green{border-color:rgba(74,222,128,.32); background:rgba(74,222,128,.06); color:rgba(255,255,255,.78)}
+    .modBtnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .modBtn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      font-weight:650;
+      font-size:13px;
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .modBtn:hover{transform:translateY(-1px); border-color:rgba(187,102,255,.45); background:rgba(187,102,255,.10)}
+    .modBtn.primary{
+      border-color:rgba(187,102,255,.5);
+      background:linear-gradient(180deg, rgba(187,102,255,.22), rgba(187,102,255,.08));
+    }
+    .hr{height:1px; background:var(--border); margin:14px 0}
+    .small{font-size:12.5px; color:var(--muted)}
+    .quote{
+      border-left:3px solid rgba(255,209,102,.55);
+      padding:10px 12px;
+      margin-top:12px;
+      background:rgba(255,209,102,.06);
+      border-radius:12px;
+      color:var(--ink);
+    }
+    .cycle{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    @media(max-width:900px){ .cycle{grid-template-columns:1fr} }
+    .cycle .row{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      padding:10px 12px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .cycle .row b{color:var(--ink); font-weight:700}
+    .footer{
+      margin-top:28px;
+      text-align:center;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+    }
+    .tools{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;
+    }
+    .toolLink{
+      text-decoration:none;
+      font-size:12.5px;
+      padding:9px 10px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.80);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .toolLink:hover{transform:translateY(-1px); border-color:rgba(255,209,102,.45); background:rgba(255,209,102,.08)}
+    /* Print friendly */
+    @media print{
+      .topbar{position:relative; top:auto; box-shadow:none}
+      .modBtnRow,.tools{display:none}
+      body{background:#fff;color:#111}
+      .card,.hero,.topbar{background:#fff;border-color:#ddd}
+      .subtitle,.small,.card p,.box p,.cycle .row{color:#333}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="topbar" role="navigation" aria-label="SGI Warrior Mini Course">
+      <div class="brand">
+        <a class="logoWrap" href="index.html" aria-label="SGI home">
+          <div class="logoInner">
+            <img class="logoImg" src="tn_SwamiG.gif" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="logoSvg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 6c9.6 0 18.4 5.4 22.7 14.1" stroke="rgba(255,209,102,.85)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M10.2 20.1C14.7 11.4 23 6 32 6" stroke="rgba(187,102,255,.9)" stroke-width="3" stroke-linecap="round"/>
+              <text x="18" y="36" font-size="14" font-weight="800" fill="rgba(255,255,255,.8)">SGI</text>
+            </svg>
+          </div>
+        </a>
+        <div class="txt">
+          <strong>SwamiG Institute</strong>
+          <span>Warriors Mini Course • Ma’at Integration</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Modules">
+        <a class="chip" href="warriors-module-1.html">Mod 1</a>
+        <a class="chip" href="warriors-module-2.html">Mod 2</a>
+        <a class="chip" href="warriors-module-3.html">Mod 3</a>
+        <a class="chip" href="warriors-module-4.html">Mod 4</a>
+        <a class="chip" href="warriors-module-5.html">Mod 5</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="warriors-module-1.html">Start →</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Course hero">
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><b>SGI Warrior Track</b> • Ma’at Law • Ajagun Discipline • 42-Day Cycle</div>
+          <h1>Warriors Mini Course</h1>
+          <p class="subtitle">
+            This course trains Warriors to apply <b>law before force</b>. The 42 Negative Confessions of Ma’at
+            become an SGI Rules of Engagement: speech discipline, power restraint, energy stewardship,
+            ancestor alignment, and daily accountability.
+          </p>
+
+          <div class="pillRow">
+            <span class="pill good">Outcome: Accountability Speed</span>
+            <span class="pill warn">Rule: Correct within 24h</span>
+            <span class="pill">Mode: Daily practice + log</span>
+          </div>
+
+          <div class="quote">
+            <b>SGI Doctrine:</b> Warriors do not become what they oppose.
+          </div>
+
+          <div class="modBtnRow">
+            <a class="modBtn primary" href="warriors-module-1.html">Begin Module 1</a>
+            <a class="modBtn" href="#cycle">View 42-Day Cycle</a>
+            <a class="modBtn" href="#oath">Warrior Oath</a>
+          </div>
+        </div>
+
+        <aside class="aside">
+          <div class="box">
+            <h3>How to Use This Course</h3>
+            <p>
+              Read the module, perform the daily practice, and complete the assignment. If you violate a law,
+              <b>correct it within 24 hours</b> and record the repair.
+            </p>
+          </div>
+          <div class="box">
+            <h3>Recommended Daily Flow</h3>
+            <p>AM (1–2 min): read the day’s confession • PM (6–10 min): log + correction</p>
+          </div>
+          <div class="box">
+            <h3>Completion</h3>
+            <p>Finish Mod 5, speak the oath, write the declaration, and archive your log.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Modules overview">
+      <article class="card">
+        <h2>Module 1 — Law Before Force</h2>
+        <p>Install Ma’at as non-negotiable law. Use Ori as internal judge. Train correction speed.</p>
+        <div class="meta">
+          <span class="tag purple">Core: 1 • 8 • 16 • 24 • 34 • 42</span>
+          <span class="tag gold">Memorize: 1 • 8 • 42</span>
+          <span class="tag green">Goal: Accountability</span>
+        </div>
+        <div class="modBtnRow">
+          <a class="modBtn primary" href="warriors-module-1.html">Open Module 1</a>
+          <a class="modBtn" href="warriors-module-2.html">Next: Module 2</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Module 2 — Force, Power & Restraint</h2>
+        <p>Train controlled strength. No intimidation, no coercion, no fear tactics. Hold power cleanly.</p>
+        <div class="meta">
+          <span class="tag purple">Core: 2 • 4 • 15 • 23 • 28</span>
+          <span class="tag gold">Drill: 7-day no intimidation</span>
+          <span class="tag green">Goal: Non-reaction</span>
+        </div>
+        <div class="modBtnRow">
+          <a class="modBtn primary" href="warriors-module-2.html">Open Module 2</a>
+          <a class="modBtn" href="warriors-module-3.html">Next: Module 3</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Module 3 — Inner Warfare</h2>
+        <p>Seal internal breaches: speech, emotion, mind discipline. Ajogun exploit leaks—close them.</p>
+        <div class="meta">
+          <span class="tag purple">Core: 10 • 13 • 14 • 19 • 20 • 25 • 32</span>
+          <span class="tag gold">Drill: Minimal speech day</span>
+          <span class="tag green">Goal: Faster recovery</span>
+        </div>
+        <div class="modBtnRow">
+          <a class="modBtn primary" href="warriors-module-3.html">Open Module 3</a>
+          <a class="modBtn" href="warriors-module-4.html">Next: Module 4</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Module 4 — Stewardship & Leadership</h2>
+        <p>Conserve sexual energy, steward resources, treat rank as responsibility—never exploitation.</p>
+        <div class="meta">
+          <span class="tag purple">Core: 3 • 5 • 9 • 11 • 12 • 17 • 36</span>
+          <span class="tag gold">Drill: Energy + resource log</span>
+          <span class="tag green">Goal: Authority</span>
+        </div>
+        <div class="modBtnRow">
+          <a class="modBtn primary" href="warriors-module-4.html">Open Module 4</a>
+          <a class="modBtn" href="warriors-module-5.html">Next: Module 5</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Module 5 — Ancestors, Nature & Completion</h2>
+        <p>Anchor power in continuity: honor the dead, respect life, protect water, seal the oath.</p>
+        <div class="meta">
+          <span class="tag purple">Core: 37 • 40 • 41</span>
+          <span class="tag gold">Final: Oath + Declaration</span>
+          <span class="tag green">Goal: Completion</span>
+        </div>
+        <div class="modBtnRow">
+          <a class="modBtn primary" href="warriors-module-5.html">Open Module 5</a>
+          <a class="modBtn" href="#oath">View Oath</a>
+        </div>
+      </article>
+
+      <article class="card" id="oath">
+        <h2>SGI Warrior Oath (Quick Access)</h2>
+        <p class="small">Speak aloud at the end of Module 5 (and anytime you need to reset).</p>
+        <div class="hr"></div>
+        <p style="margin:0 0 8px;"><b>I do not violate Ma’at.</b></p>
+        <p style="margin:0 0 8px;">I do not misuse force.</p>
+        <p style="margin:0 0 8px;">I do not corrupt speech.</p>
+        <p style="margin:0 0 8px;">I do not dishonor ancestors.</p>
+        <p style="margin:0 0 8px;">I stand as Warrior, not predator.</p>
+        <p style="margin:0;"><b>If I break this law, I correct myself immediately.</b></p>
+        <div class="tools" style="margin-top:14px;">
+          <a class="toolLink" href="#cycle">42-Day Cycle</a>
+          <a class="toolLink" href="warriors-module-1.html">Restart Module 1</a>
+          <a class="toolLink" href="javascript:window.print()">Print</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="card" id="cycle" style="margin-top:14px;" aria-label="42-day cycle">
+      <h2>42-Day Warrior Discipline Cycle</h2>
+      <p class="small">
+        6 weeks × 7 confessions. One confession per day. Morning read → daytime practice → evening log.
+        <b>Correction within 24 hours restores alignment.</b>
+      </p>
+      <div class="cycle" role="list">
+        <div class="row" role="listitem"><span><b>Week 1</b> • Truth & Integrity</span><span>1–7</span></div>
+        <div class="row" role="listitem"><span><b>Week 2</b> • Speech & Desire</span><span>8–14</span></div>
+        <div class="row" role="listitem"><span><b>Week 3</b> • Force & Emotion</span><span>15–21</span></div>
+        <div class="row" role="listitem"><span><b>Week 4</b> • Law & Justice</span><span>22–28</span></div>
+        <div class="row" role="listitem"><span><b>Week 5</b> • Stewardship & Rank</span><span>29–35</span></div>
+        <div class="row" role="listitem"><span><b>Week 6</b> • Ancestors & Elements</span><span>36–42</span></div>
+      </div>
+      <div class="tools">
+        <a class="toolLink" href="warriors-module-1.html">Start the Cycle</a>
+        <a class="toolLink" href="warriors-module-3.html">Inner Warfare Drill</a>
+        <a class="toolLink" href="javascript:window.print()">Print</a>
+      </div>
+    </section>
+
+    <div class="footer">Governed by Tehuti (+) Irete</div>
+  </div>
+
+  <script>
+    // Small UX: scroll-to anchor offset for sticky topbar
+    (function(){
+      function offsetAnchor(){
+        if(location.hash.length > 1){
+          const el = document.querySelector(location.hash);
+          if(!el) return;
+          const y = el.getBoundingClientRect().top + window.scrollY - 86;
+          window.scrollTo({ top:y, behavior:"smooth" });
+        }
+      }
+      window.addEventListener("hashchange", offsetAnchor);
+      // If loaded with hash
+      if(location.hash) setTimeout(offsetAnchor, 120);
+    })();
+  </script>
+</body>
+</html>
