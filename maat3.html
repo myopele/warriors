@@ -1,0 +1,173 @@
+<!-- =========================================================
+ SGI Warrior Mini Course — Module 3 (Ma’at Integration)
+ File: warriors-module-3.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SGI — Warriors Mini Course — Module 3: Inner Warfare</title>
+  <meta name="description" content="SGI Warrior Training — Module 3: Speech, Emotion & Mind. Close internal breaches exploited by Ajogun." />
+  <style>
+    :root{--bg:#0b0b0f;--ink:#f3f4f6;--muted:#bfc3d1;--border:rgba(255,255,255,.12);--accent:#bb66ff;--accent2:#ffd166;--radius:20px;--max:1100px;--shadow:0 18px 50px rgba(0,0,0,.45);}
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 20% -10%, rgba(187,102,255,.20), transparent 55%),
+      radial-gradient(900px 600px at 90% 10%, rgba(255,209,102,.12), transparent 50%),
+      radial-gradient(800px 700px at 50% 110%, rgba(102,255,178,.10), transparent 50%),
+      var(--bg);
+      color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px;border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.72));border-radius:18px;box-shadow:var(--shadow);
+      position:sticky;top:10px;z-index:9;backdrop-filter:blur(10px);}
+    .brand{display:flex;align-items:center;gap:10px;min-width:190px}
+    .brand .txt{line-height:1.15}
+    .brand .txt strong{display:block;font-size:14px;letter-spacing:.4px}
+    .brand .txt span{display:block;font-size:12px;color:var(--muted)}
+    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;flex:1}
+    .chip{text-decoration:none;font-size:12.5px;padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;white-space:nowrap}
+    .chip:hover{transform:translateY(-1px);border-color:rgba(187,102,255,.45);background:rgba(187,102,255,.10)}
+    .chip.active{border-color:rgba(255,209,102,.55);background:rgba(255,209,102,.10)}
+    .cta{display:flex;gap:10px;align-items:center;justify-content:flex-end;min-width:190px}
+    .btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;
+      border:1px solid rgba(187,102,255,.5);background:linear-gradient(180deg, rgba(187,102,255,.22), rgba(187,102,255,.08));
+      font-weight:650;font-size:13px;transition:transform .15s ease,filter .15s ease}
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+    @media(max-width:900px){.cta{display:none}}
+    .hero{margin-top:18px;border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.88), rgba(20,20,28,.62));box-shadow:var(--shadow);overflow:hidden}
+    .heroInner{padding:22px 20px;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}
+    @media(max-width:900px){.heroInner{grid-template-columns:1fr}}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-size:12px;color:var(--muted);padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
+    h1{margin:12px 0 6px;font-size:28px;letter-spacing:.2px}
+    .subtitle{margin:0;color:var(--muted);max-width:70ch}
+    .box{border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.04);padding:14px;margin:10px 0}
+    .box h3{margin:0 0 6px;font-size:14px}
+    .box p{margin:0;color:var(--muted);font-size:13.5px}
+    .sideCard{border-left:1px solid var(--border);padding-left:18px}
+    @media(max-width:900px){.sideCard{border-left:none;padding-left:0}}
+    .grid{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(20,20,28,.92), rgba(20,20,28,.64));padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p{margin:8px 0;color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)} li{margin:6px 0}
+    .quote{border-left:3px solid rgba(255,209,102,.55);padding:10px 12px;margin:10px 0 0;background:rgba(255,209,102,.06);border-radius:12px}
+    .logoWrap{width:34px;height:34px;flex:0 0 34px;border-radius:12px;border:1px solid rgba(187,102,255,.35);
+      background:radial-gradient(circle at 30% 30%, rgba(187,102,255,.35), rgba(255,255,255,.03) 55%, rgba(0,0,0,0) 60%), rgba(255,255,255,.03);
+      display:grid;place-items:center;position:relative;overflow:hidden}
+    .logoWrap::after{content:"";position:absolute;inset:-40%;
+      background:conic-gradient(from 180deg, rgba(187,102,255,0), rgba(187,102,255,.20), rgba(255,209,102,.16), rgba(187,102,255,0));
+      animation:spin 4.2s linear infinite}
+    .logoInner{position:relative;z-index:1;width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10)}
+    .logoImg{width:22px;height:22px;border-radius:7px;object-fit:contain;animation:float 2.8s ease-in-out infinite}
+    .logoSvg{width:20px;height:20px;display:none;animation:float 2.8s ease-in-out infinite}
+    @keyframes spin{to{transform:rotate(360deg)}} @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6px)}}
+    .footer{margin-top:28px;text-align:center;color:rgba(255,255,255,.45);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <a class="logoWrap" href="index.html" aria-label="Back to index">
+          <div class="logoInner">
+            <img class="logoImg" src="tn_SwamiG.gif" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="logoSvg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M32 6c9.6 0 18.4 5.4 22.7 14.1" stroke="rgba(255,209,102,.85)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M10.2 20.1C14.7 11.4 23 6 32 6" stroke="rgba(187,102,255,.9)" stroke-width="3" stroke-linecap="round"/>
+              <text x="18" y="36" font-size="14" font-weight="800" fill="rgba(255,255,255,.8)">SGI</text>
+            </svg>
+          </div>
+        </a>
+        <div class="txt"><strong>SwamiG Institute</strong><span>Warriors Mini Course • Ma’at Integration</span></div>
+      </div>
+      <nav class="nav" aria-label="Modules">
+        <a class="chip" href="warriors-module-1.html">Mod 1</a>
+        <a class="chip" href="warriors-module-2.html">Mod 2</a>
+        <a class="chip active" href="warriors-module-3.html">Mod 3</a>
+        <a class="chip" href="warriors-module-4.html">Mod 4</a>
+        <a class="chip" href="warriors-module-5.html">Mod 5</a>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="warriors-module-2.html">← Back</a>
+        <a class="btn" href="warriors-module-4.html">Next →</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><b>Module 3</b> • Inner Warfare • Speech + Emotion + Mind</div>
+          <h1>Inner Warfare</h1>
+          <p class="subtitle">
+            Ajogun exploit breaches in speech, emotion, and mental discipline. This module seals the leaks:
+            no slander, no unnecessary words, no emotional discharge that becomes spiritual vulnerability.
+          </p>
+          <div class="quote"><b>SGI Doctrine:</b> Most battles are lost internally first.</div>
+        </div>
+        <aside class="sideCard">
+          <div class="box"><h3>Core Confessions</h3><p>10 • 13 • 14 • 19 • 20 • 25 • 32</p></div>
+          <div class="box"><h3>Key Drill</h3><p>Minimal speech day + silence after provocation</p></div>
+          <div class="box"><h3>Daily Time</h3><p>10 minutes (trigger + recovery log)</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Practices</h2>
+        <ul>
+          <li><b>Minimal Speech Day:</b> speak only what is necessary (24 hours).</li>
+          <li><b>Silence After Provocation:</b> 90 seconds of no reply, then choose law.</li>
+          <li><b>Trigger Map:</b> name your top 3 triggers and your recovery method.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Assignment</h2>
+        <p>Identify your primary internal Ajogun (choose one):</p>
+        <ul>
+          <li>Anger / Irritation</li>
+          <li>Pride / Arrogance</li>
+          <li>Envy / Comparison</li>
+          <li>Fear / Avoidance</li>
+          <li>Deceit / Performance</li>
+        </ul>
+        <p class="small">Write 8–12 lines: “How it enters, what it costs, how I close the gate.”</p>
+      </div>
+
+      <div class="card">
+        <h2>Module 3 Confessions</h2>
+        <ul>
+          <li><b>10</b> — I have not uttered curses.</li>
+          <li><b>13</b> — I have not caused anyone to weep.</li>
+          <li><b>14</b> — I have not eaten my heart (greed / deceit).</li>
+          <li><b>19</b> — I have not slandered anyone.</li>
+          <li><b>20</b> — I have not been angry without just cause.</li>
+          <li><b>25</b> — I have not been wrathful.</li>
+          <li><b>32</b> — I have not multiplied words excessively.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Pass Condition</h2>
+        <ul>
+          <li>Reduced emotional reaction time.</li>
+          <li>Improved recovery speed.</li>
+          <li>Less “extra speech” under stress.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">Governed by Tehuti (+) Irete</div>
+  </div>
+</body>
+</html>
